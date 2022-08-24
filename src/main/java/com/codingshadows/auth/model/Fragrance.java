@@ -15,8 +15,8 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@SQLDelete(sql = "UPDATE fragrance SET isAvailable = false WHERE id=?")
-@Where(clause = "isAvailable=true")
+@SQLDelete(sql = "UPDATE fragrance SET is_available = false WHERE id=?")
+@Where(clause = "is_available=true")
 public class Fragrance {
 
     @Id

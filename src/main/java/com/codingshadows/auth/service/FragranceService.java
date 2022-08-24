@@ -13,7 +13,17 @@ public class FragranceService {
 
     private final FragranceRepository fragranceRepository;
 
+    public Fragrance addFragrance(Fragrance fragrance){
+        if(fragranceRepository.findByFragranceName(fragrance.getFragranceName()).isPresent())
+            return fragrance;
+        return fragranceRepository.save(fragrance);
+    }
+
     public List<Fragrance> getAllAvailableFragrances(){
         return fragranceRepository.findAll();
     }
+    public void deleteFragranceById(Integer fragranceId){
+        fragranceRepository.deleteById(fragranceId);
+    }
+
 }

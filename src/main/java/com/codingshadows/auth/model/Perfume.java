@@ -19,7 +19,7 @@ public class Perfume {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String perfumeName;
-    @OneToMany
+    @ManyToMany
     private List<Fragrance> fragrances;
     @ManyToOne
     private MyUser myUser;
